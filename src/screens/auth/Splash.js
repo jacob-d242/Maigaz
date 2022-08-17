@@ -1,11 +1,17 @@
 import React from 'react'
-import { StyleSheet, Text,View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import Button from '../../components/Button';
+import {COLORS} from '../../constants/Index'
 export default function () {
     return (
-            <View style={{ flex: 1 ,flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Text>
-                Moracha
-            </Text>
+            <View style={styles.container}>
+                <Text style={styles.maititle }>MAIGAZ</Text>
+                <Text style={styles.mainvision}>Your Number One option for Gas and Water</Text>
+                <Button
+                    
+                    title ="Get Started"
+                    style={styles.button}
+                />                
             </View>
         
     )
@@ -13,5 +19,25 @@ export default function () {
 
 
 const styles = StyleSheet.create({
-
+    container: {
+        alignItems: 'center',
+        
+    },
+    maititle: {
+        marginTop: '40%', 
+        fontSize: 64,
+        fontFamily:'Inter-Bold',
+        color:COLORS.primary
+    },
+    mainvision: {
+        fontFamily:'Inter-Medium',
+        fontSize: 17,
+        marginVertical: '20%',
+        color:COLORS.lightSecondary
+    },
+    button: {
+        fontSize: 28,
+        color: '#fff',
+        fontFamily:'Inter-Medium',
+    }
 })

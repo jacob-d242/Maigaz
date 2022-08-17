@@ -1,7 +1,7 @@
-import React from 'react'
-
-export default function COLORS(){
+export const COLORS={
     primary:"#6F48C5",
     lightPrimary:"#082777",
-    secondary:"#BDBDBD",
+    secondary: "#BDBDBD",
+    lightSecondary:"#333333"
+
 }
