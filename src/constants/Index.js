@@ -5,3 +5,9 @@ export const COLORS={
     lightSecondary:"#333333",
     main:"#8F00FF"
 }
+
+
+export const IMAGES = {
+    user: require("../assets/images/user.png"),
+    gas: require("../assets/images/Gas.png")
+}
