@@ -52,13 +52,8 @@ export default function Login({navigation}) {
                             onPress={()=>navigation.navigate('ResetPassword')}
                             style={styles.reset}>Reset</Text>
                     </View>
-                    <View style={{ alignItems: 'center',flexDirection: 'row',justifyContent: 'space-between' }}>
-                        <Text style={styles.pass}>Dont have an Account?</Text>
-                        <Text
-                            onPress={()=>navigation.navigate('SignUp')}
-                            style={styles.reset}>Signup</Text>
-                    </View>
-                 <View style={{ flexDirection: "row",alignItems: 'center',marginTop:20 }}>
+                    <Text style={{fontSize:22,fontFamily:'Inter-Bold',color:COLORS.lightSecondary}}>Or</Text>
+                    <View style={{ flexDirection: "row",alignItems: 'center',marginTop:20 }}>
                         <TouchableOpacity style={styles.social}>
                             <Fontisto name="facebook" size={30} color="blue" />
                         </TouchableOpacity>
@@ -66,6 +61,13 @@ export default function Login({navigation}) {
                             <Fontisto name="google" size={30} color="blue" />
                         </TouchableOpacity>
                     </View>
+                    <View style={{ alignItems: 'center',flexDirection: 'row',justifyContent: 'space-between' }}>
+                        <Text style={styles.pass}>Dont have an Account?</Text>
+                        <Text
+                            onPress={()=>navigation.navigate('SignUp')}
+                            style={styles.reset}>Signup</Text>
+                    </View>
+                 
                 </View>
             </ScrollView>
         </SafeAreaView>
