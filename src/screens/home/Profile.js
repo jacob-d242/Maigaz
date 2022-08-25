@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Header from '../../components/Header'
 import { COLORS ,IMAGES} from '../../constants/Index';
 import ProfileBtn from './components/ProfileBtn';
-export default function Profile() {
+export default function Profile({navigation}) {
     return ( 
         <View style={ { backgroundColor: '#E5E5E5',flex:1}}>
             <Header
@@ -31,6 +31,11 @@ export default function Profile() {
                 <ProfileBtn
                     heading="Edit Profile"
                     iconName="account-edit"
+                />
+                <ProfileBtn
+                    heading="Add Product"
+                    iconName="account-edit"
+                    onPress={()=> navigation.navigate('addProduct') }
                 />
                 <ProfileBtn
                     heading="Order History"

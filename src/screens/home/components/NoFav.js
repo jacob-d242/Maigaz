@@ -1,14 +1,17 @@
+import AnimatedLottieView from 'lottie-react-native'
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import Button from '../../../components/Button'
-import { COLORS,IMAGES } from '../../../constants/Index'
+import { ANIMES, COLORS,IMAGES } from '../../../constants/Index'
 export default function NoFavourite() {
     return ( 
 
-        <View style={{ alignItems: 'center',justifyContent: 'space-evenly' }}>
-            <Image
+        <View style={{ alignItems: 'center',justifyContent: 'space-evenly',margin:20}}>
+            <AnimatedLottieView
                 resizeMode="contain"
-                source={IMAGES.Fav}
+                source={ANIMES.empty}
+                style={styles.anime}
+                autoPlay loop
             />
             <Text style={styles.texts}>You Have No Favourites</Text>
             <Text style={styles.texts}>Click Below to Start An new Order</Text>
@@ -35,5 +38,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: COLORS.lightSecondary,
         fontFamily: 'Inter-Medium',
+    },
+    anime: {
+        height: 400,
+        width: 400,
     }
 })

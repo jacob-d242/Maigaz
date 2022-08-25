@@ -6,7 +6,9 @@ export default function CartProduct() {
     return (
         <View style={styles.cartProduct}>
             <Image
-                source={require('../../../assets/images/Gas.png')}
+                resizeMode="contain"
+                source={IMAGES.gas}
+                style={styles.image}
             />
             <View style={{ alignItems: 'center',justifyContent: 'space-evenly',marginHorizontal:10}}>
                 <View style={styles.topcont}>
@@ -36,6 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         flexDirection: 'row',
+        height: 130,
     },
     topcont: {
         flexDirection: 'row',
@@ -56,5 +59,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         height: 30,
         width: 35
-    }
+    },
+    image: {
+        height: '100%',
+        }
 })

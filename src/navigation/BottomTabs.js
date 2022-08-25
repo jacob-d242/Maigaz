@@ -7,6 +7,7 @@ import Favourites from '../screens/home/Favourites'
 import Cart from '../screens/home/Cart';
 import Profile from '../screens/home/Profile'
 import {COLORS} from '../constants/Index'
+import DashNavigation from './DashNavigation';
 
 const Tab = createBottomTabNavigator();
 export default function BottomTabs() {
@@ -59,7 +60,7 @@ export default function BottomTabs() {
                     }}
                 })}
                 >
-            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Home" component={DashNavigation} />
             <Tab.Screen name="Favourites" component={Favourites} />   
             <Tab.Screen name="Cart" component={Cart} />
             <Tab.Screen name="Profile" component={Profile} />

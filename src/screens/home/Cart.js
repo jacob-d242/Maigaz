@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Header from '../../components/Header'
 import { COLORS } from '../../constants/Index';
 import CartProduct from './components/CartProduct';
 export default function Cart() {
     return ( 
-        <View>
+        <SafeAreaView>
             <Header
                 Title="Basket"
             />
@@ -21,7 +22,7 @@ export default function Cart() {
             <View style={{margin:20}}>
                 <CartProduct/>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
