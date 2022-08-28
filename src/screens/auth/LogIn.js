@@ -20,7 +20,7 @@ export default function Login({navigation}) {
                         Title="Login"
                     />
                     <View style={ {alignItems: 'center'}}>                    
-                        <Text style={styles.title}>Enter Details To Login</Text>
+                        <Text style={styles.title}>Welcome Back Enter Details To Login</Text>
                    </View>
             <ScrollView
                 contentContainerStyle={{

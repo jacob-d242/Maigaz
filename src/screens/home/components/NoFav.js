@@ -1,8 +1,8 @@
 import AnimatedLottieView from 'lottie-react-native'
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import {StyleSheet, Text, View } from 'react-native'
 import Button from '../../../components/Button'
-import { ANIMES, COLORS,IMAGES } from '../../../constants/Index'
+import { ANIMES, COLORS } from '../../../constants/Index'
 export default function NoFavourite() {
     return ( 
 
