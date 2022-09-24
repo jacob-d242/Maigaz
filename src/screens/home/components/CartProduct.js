@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import  Icon  from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import NumericInput from 'react-native-numeric-input'
 import { COLORS,IMAGES } from '../../../constants/Index'
 export default function CartProduct() {
     return (
@@ -23,10 +24,7 @@ export default function CartProduct() {
                         />
                 </View>
                 <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                    <Text style={styles.quantity}>Quantity</Text>
-                    <Text style={styles.text1}>-</Text>
-                    <Text style={styles.text}>1</Text>
-                    <Text style={styles.text1}>+</Text>
+                    <NumericInput/>
                 </View>
             </View>
         </View>

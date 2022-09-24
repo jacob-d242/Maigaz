@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
     },
     texts: {
         fontSize: 28,
-
+        color: COLORS.primary,
+        fontFamily: "Inter-Bold",
+        marginTop:15,
     }
 })
