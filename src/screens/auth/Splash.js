@@ -1,10 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Button from '../../components/Button';
 import {COLORS} from '../../constants/Index'
 export default function Splash({navigation}) {
     return (
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
                 <Text style={styles.maititle }>MAIGAZ</Text>
                 <Text style={styles.mainvision}>Your Number One option for Gas and Water</Text>
                 <Button
@@ -12,7 +12,7 @@ export default function Splash({navigation}) {
                     title ="Get Started"
                     style={styles.button}
                 />                
-            </View>
+            </SafeAreaView>
         
     )
 }

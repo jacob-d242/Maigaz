@@ -5,6 +5,12 @@ import Header from '../../components/Header'
 import { COLORS } from '../../constants/Index'
 import Input from './components/Input'
 export default function SignUp({navigation}) {
+    const onRegisterPress = () =>{
+           
+    }
+
+
+
     return ( 
         
         <SafeAreaView style={{ flex: 1, backgroundColor: '#E5E5E5' }}>

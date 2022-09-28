@@ -39,14 +39,14 @@ export default function BottomTabs() {
                                 color={focused ? COLORS.primary : "#ccc"}
                             />
                             )
-                            case "Cart":
-                                return (
-                                <Icon
-                                    name="basket"
-                                    size={size}
-                                    color={focused ? COLORS.primary : "#ccc"}
-                                />
-                                )
+                            //case "Cart":
+                            //    return (
+                            //    <Icon
+                            //        name="basket"
+                            //        size={size}
+                            //        color={focused ? COLORS.primary : "#ccc"}
+                            //    />
+                            //    )
                                 case "Profile":
                                     return (
                                     <Icon
@@ -62,7 +62,7 @@ export default function BottomTabs() {
                 >
             <Tab.Screen name="Home" component={DashNavigation} />
             <Tab.Screen name="Favourites" component={Favourites} />   
-            <Tab.Screen name="Cart" component={Cart} />
+            {/*<Tab.Screen name="Cart" component={Cart} />*/}
             <Tab.Screen name="Profile" component={Profile} />
             </Tab.Navigator>
         //</NavigationContainer>

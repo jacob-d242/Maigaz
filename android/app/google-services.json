@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "544508015481",
+    "project_id": "mai-gaz",
+    "storage_bucket": "mai-gaz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544508015481:android:d0fa5cefa106a11988f5a8",
+        "android_client_info": {
+          "package_name": "com.maigaz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544508015481-0kk4ckk7ellqn3697mhdkceqbh7vnvko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maigaz",
+            "certificate_hash": "562a937f08c7d89fa71a230789637c54a8afc50b"
+          }
+        },
+        {
+          "client_id": "544508015481-25qflelj2bee50fiul602u3smjrts0ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOdTIBPer_wyO_E651xe9wJGaQyLyjMPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544508015481-25qflelj2bee50fiul602u3smjrts0ui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

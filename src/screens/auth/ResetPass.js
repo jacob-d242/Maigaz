@@ -8,8 +8,7 @@ export default function ResetPass({navigation}) {
     return ( 
         
         <SafeAreaView style={{ flex: 1, backgroundColor: '#E5E5E5' }}>
-            <Header
-                
+            <Header                
                 Title="Forgot Password"
             />
         <ScrollView
