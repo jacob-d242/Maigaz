@@ -12,8 +12,8 @@ export default function RootNavigation () {
     return (
         <NavigationContainer>
             {/*{user.isLoggedIn ? <MainNavigation /> : <AuthNavigation />}*/}
-            {/*<AuthNavigation />*/}
-            <MainNavigation/>
+            <AuthNavigation />
+            {/*<MainNavigation/>*/}
         </NavigationContainer>
     )
 }

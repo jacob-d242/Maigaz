@@ -24,7 +24,9 @@ export default function HomeScreen({navigation}) {
                 autoPlay loop
             />
            
-                <TouchableOpacity style={styles.btn}>
+                <TouchableOpacity 
+                 onPress={() => navigation.navigate('Cart')}
+                 style={styles.btn}>
                     <Text style={styles.btntitle}>Shop Now</Text>
                 </TouchableOpacity>
           

@@ -3,10 +3,11 @@ import React from 'react'
 import {View,Text,StyleSheet} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {COLORS} from '../constants/Index'
-export default function Header({ Title, style,iconName }) {
+export default function Header({ Title, style,iconName ,onPress}) {
     return (
         <View style={styles.header}>
             <Icon
+                onPress={onPress}
                 size={30}
                 name='arrow-left'
                 style={{marginLeft:10}}
@@ -15,6 +16,7 @@ export default function Header({ Title, style,iconName }) {
                 {Title}
             </Text>
             <Icon
+                
                 size={30}
                 name={iconName}
                 style={{marginRight:10}}

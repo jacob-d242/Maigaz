@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Button from '../../components/Button'
 import Header from '../../components/Header'
 import { COLORS } from '../../constants/Index'
 import Input from './components/Input'
-export default function SignUp({navigation}) {
+import Auth from '@react-native-firebase/auth'
+export default function SignUp({ navigation }) {
+    const [formData,setFormData] = useState({name:"",email:"",password:"",phone:""})
     const onRegisterPress = () =>{
            
     }
@@ -14,8 +16,7 @@ export default function SignUp({navigation}) {
     return ( 
         
         <SafeAreaView style={{ flex: 1, backgroundColor: '#E5E5E5' }}>
-            <Header
-                
+            <Header                
                 Title="Sign Up"
             />
         <ScrollView
@@ -33,22 +34,26 @@ export default function SignUp({navigation}) {
                         label="Name"
                         iconName="account"
                         placeholder="Enter Your Name"
+                        onChange={text => setFormData({ ...formData, name: text})}
                     />
                     <Input
                         label="Phone Number"
                         iconName="phone-outline"
                         placeholder="Enter Your Phone Number"
+                        onChange={(text) => setFormData({ ...formData, phone: text })}
                     />
                     <Input
                         label="Email"
                         iconName="email-outline"
                         placeholder="Enter Your Name"
+                        onChange={(text) => setFormData({ ...formData, email: text })}
                     />
                     <Input
                         label="Password"
                         iconName="lock-outline"
                         placeholder="Enter Your Password"
                         password
+                        onChange={(text) => setFormData({ ...formData, password: text })}
                     />
                 </View>
                 <View style={{ alignItems: 'center',marginTop:50}}>

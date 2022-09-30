@@ -5,6 +5,9 @@ import NumericInput from 'react-native-numeric-input'
 import { COLORS, IMAGES } from '../../../constants/Index'
 export default function CartProduct() {
     const [quantity, setQuantity] = useState()
+    const Gas = [
+        6,8,12,18,26,30
+    ]
     return (
         <View style={styles.cartProduct}>
             <Image
@@ -12,26 +15,39 @@ export default function CartProduct() {
                 source={IMAGES.gas}
                 style={styles.image}
             />
-            <View style={{ alignItems: 'center', justifyContent: 'space-evenly', marginHorizontal: 10 }}>
+            <View style={{ alignItems: 'center', justifyContent: 'space-evenly' }}>
                 <View style={styles.topcont}>
-                    <View>
-                        <Text>13 Kg Gas Cylinder</Text>
-                        <Text>Ksh 2000</Text>
+                    <View style={{padding:20}}>
+                        <Text style={styles.productdtl}>Product:</Text>
+                        <Text style={styles.productdtl}>Price:</Text>
+                        <Text style={styles.productdtl}>Vendor:</Text>
+                        <Text style={styles.productdtl}>Delivery</Text>
+                        <Text style={styles.productdtl}>Total Price:</Text>
+                        <Text style={styles.productdtl}>Quantity:</Text>
+                    </View>
+                    <View style={{padding:20}}>
+                        <Text style={styles.productdtl}>Gas Cylinder</Text>
+                        <Text style={styles.productdtl}>1800</Text>
+                        <Text style={styles.productdtl}>Sea Gas</Text>
+                        <Text style={styles.productdtl}>200</Text>
+                        <Text style={styles.productdtl}>Ksh 2000</Text>
+                        <Text style={styles.productdtl}>
+                        <NumericInput                       
+                            totalWidth={120}
+                            totalHeight={28}
+                            rounded
+                            rightButtonBackgroundColor={COLORS.primary}
+                            leftButtonBackgroundColor={COLORS.primary}
+                            textColor='#111'
+                            editable={false}
+                         />
+                        </Text>
                     </View>
 
                 </View>
-                <View >
-                    <NumericInput
-                        // value={this.state.value}
-                        onChange={ value => this.setState({value}) }
-                        totalWidth={130}
-                        totalHeight={35}
-                        rounded
-                        rightButtonBackgroundColor={COLORS.primary}
-                        leftButtonBackgroundColor={COLORS.primary}
-                        textColor='#111'
-                    />
-                </View>
+              
+                    
+                
             </View>
             {/*<View style={styles.favourite}>
                 <Icon
@@ -46,10 +62,11 @@ export default function CartProduct() {
 
 const styles = StyleSheet.create({
     cartProduct: {
-        backgroundColor: '#FFFFFF',
-        borderRadius: 10,
-        flexDirection: 'row',
-        height: 130,
+        backgroundColor: '#FFF',
+        borderRadius: 35,
+        flexDirection: 'column',
+        height: 420,
+        alignItems: 'center',
     },
     topcont: {
         flexDirection: 'row',
@@ -62,20 +79,17 @@ const styles = StyleSheet.create({
     heart: {
         color: COLORS.primary
     },
-    text1: {
-        backgroundColor: COLORS.lightPrimary,
-        color: '#fff',
-        fontSize: 20,
-        borderWidth: 0.2,
-        justifyContent: 'space-between',
-        height: 30,
-        width: 35
-    },
     image: {
-        height: '100%',
+        height: '50%',
+        width: '40%'
     },
     favourite:{
         marginTop: 10,
         
+    },
+    productdtl: {
+        fontSize: 18,
+        margin: 2,
+        fontFamily:"Inter-Bold"
     }
 })

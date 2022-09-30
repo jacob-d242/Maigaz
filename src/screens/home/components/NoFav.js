@@ -13,7 +13,7 @@ export default function NoFavourite() {
                 style={styles.anime}
                 autoPlay loop
             />
-            <Text style={styles.texts}>You Have No Favourites</Text>
+            <Text style={styles.texts}>You Have No Orders</Text>
             <Text style={styles.texts}>Click Below to Start An new Order</Text>
             <Button
                 title="Create Order"
