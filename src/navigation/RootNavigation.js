@@ -8,11 +8,11 @@ import MainNavigation from "./MainNavigation";
 
 
 export default function RootNavigation () {
-    //const user = useSelector(state => state.user);
+    const user = useSelector(state => state.user);
     return (
         <NavigationContainer>
-            {/*{user.isLoggedIn ? <MainNavigation /> : <AuthNavigation />}*/}
-            <AuthNavigation />
+            {user.isLoggedIn ? <MainNavigation /> : <AuthNavigation />}
+            {/*<AuthNavigation />*/}
             {/*<MainNavigation/>*/}
         </NavigationContainer>
     )
