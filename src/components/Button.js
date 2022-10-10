@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: COLORS.primary,
         alignItems: "center",
-        width: '90%',
+        width: '60%',
         height: 50,
         borderWidth: 1,
-        borderRadius:8,
+        borderRadius:25,
         borderColor: COLORS.primary,
         padding:5
     },
