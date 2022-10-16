@@ -24,8 +24,10 @@ export default function Cart({navigation}) {
             <View style={{margin:20}}>
                 <CartProduct/>
             </View>
-            <TouchableOpacity style={styles.btn}>
-                <Text style={{fontSize:28,color:"#FFF",fontWeight:'Inter-Bold'}}>Order</Text>
+            <TouchableOpacity style={styles.btn}
+                onPress={()=>navigation.navigate('OrderAdress')}
+            >
+                <Text style={{fontSize:28,color:"#FFF",fontWeight:'Inter-Bold'}}>Next</Text>
             </TouchableOpacity>
         </SafeAreaView>
     )

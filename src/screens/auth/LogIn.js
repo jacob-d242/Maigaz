@@ -61,9 +61,9 @@ export default function Login() {
                 querySnapshot.forEach(documentSnapShot => {
                     productData.push(documentSnapShot.data())
                 })
-                if (productData) {
-                    user = productData.find(data => data.uid === id)
-                }
+                //if (productData) {
+                //    user = productData.find(data => data.uid === uid)
+                //}
                 dispatch({ type: "AUTHENTICATION",payload:user })
         })
     }
@@ -97,8 +97,8 @@ export default function Login() {
                         <View style={{ alignItems: 'center' }}>
                             <Button
                                 title={loading ? 'LoggingIn...' : 'Login'}
-                        style={styles.btn}
-                        onPress={loginUser}
+                                style={styles.btn}
+                                 onPress={loginUser}
                             />
                             <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between' }}>
                                 <Text style={styles.pass}>Forgot Password ?</Text>

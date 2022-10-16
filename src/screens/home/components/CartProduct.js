@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import NumericInput from 'react-native-numeric-input'
 import { COLORS, IMAGES } from '../../../constants/Index'
+import firestore  from '@react-native-firebase/firestore'
 export default function CartProduct() {
-    const [quantity, setQuantity] = useState()
-    const Gas = [
-        6,8,12,18,26,30
-    ]
+    const [loading, setLoading] = useState(true);
+    const [gas,setGas] = useState([]);
+    const users = firestore().collection('Users').get();
+    useEffect(() => {
+        const Products = firestore()
+            .collection('Products')
+            .onSnapshot(() => {
+                const gas = [];
+                querySnapshot.forEach(documentSnapshot => {
+                    gas.push({
+                        ...documentSnapshot.data(),
+                        key: documentSnapshot.id,
+                    });
+                });
+                setGas(gas);
+                setLoading(false);
+            })
+        return () => gas();
+     }, [])
     return (
         <View style={styles.cartProduct}>
             <Image
