@@ -3,27 +3,39 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import NumericInput from 'react-native-numeric-input'
 import { COLORS, IMAGES } from '../../../constants/Index'
+import SelectList from 'react-native-dropdown-select-list'
 import firestore  from '@react-native-firebase/firestore'
+import { useNavigation } from '@react-navigation/native'
 export default function CartProduct() {
-    const [loading, setLoading] = useState(true);
-    const [gas,setGas] = useState([]);
-    const users = firestore().collection('Users').get();
-    useEffect(() => {
-        const Products = firestore()
-            .collection('Products')
-            .onSnapshot(() => {
-                const gas = [];
-                querySnapshot.forEach(documentSnapshot => {
-                    gas.push({
-                        ...documentSnapshot.data(),
-                        key: documentSnapshot.id,
-                    });
-                });
-                setGas(gas);
-                setLoading(false);
-            })
-        return () => gas();
-     }, [])
+    const [selected, setSelected] = useState({brand:'',category:'',subcategory:''});
+    const [formData,setFormData] = useState();
+    const [category, setCategory] = useState();
+    const [subcategory, setSubCategory] = useState();
+    const [brand,setBrand] = useState();
+    const navigation = useNavigation();
+    const vendor = [
+        { key :'SA' , value :'SeaGas'},
+        { key :'TT' , value :'Total'},
+        { key :'MP' , value :'Mpishi'},
+    ]
+    const categories = [
+        { key :'A' , value :'6'},
+        { key :'B' , value :'8'},
+        { key :'C' , value :'12'},
+        { key :'D' , value :'15'},
+        { key :'E' , value :'16'}
+    ]
+    const subCategories = {
+        "A": [{ key: '1', value: '1200' }],
+        "B": [{ key: '2', value: '1800' }],
+        "C": [{ key: '3', value: '3200' }],
+        "D": [{ key: '4', value: '3800' }],
+        "E": [{ key: '5', value: '4800' }],
+    }
+    const orderHandler = () => {
+        console.log(selected)
+       {navigation.navigate('OrderAdress',{formData:selected})}
+    }
     return (
         <View style={styles.cartProduct}>
             <Image
@@ -31,47 +43,52 @@ export default function CartProduct() {
                 source={IMAGES.gas}
                 style={styles.image}
             />
-            <View style={{ alignItems: 'center', justifyContent: 'space-evenly' }}>
-                <View style={styles.topcont}>
-                    <View style={{padding:20}}>
-                        <Text style={styles.productdtl}>Product:</Text>
-                        <Text style={styles.productdtl}>Price:</Text>
-                        <Text style={styles.productdtl}>Vendor:</Text>
-                        <Text style={styles.productdtl}>Delivery</Text>
-                        <Text style={styles.productdtl}>Total Price:</Text>
-                        <Text style={styles.productdtl}>Quantity:</Text>
-                    </View>
-                    <View style={{padding:20}}>
-                        <Text style={styles.productdtl}>Gas Cylinder</Text>
-                        <Text style={styles.productdtl}>1800</Text>
-                        <Text style={styles.productdtl}>Sea Gas</Text>
-                        <Text style={styles.productdtl}>200</Text>
-                        <Text style={styles.productdtl}>Ksh 2000</Text>
-                        <Text style={styles.productdtl}>
-                        <NumericInput                       
-                            totalWidth={120}
-                            totalHeight={28}
-                            rounded
-                            rightButtonBackgroundColor={COLORS.primary}
-                            leftButtonBackgroundColor={COLORS.primary}
-                            textColor='#111'
-                            editable={false}
-                         />
-                        </Text>
-                    </View>
-
-                </View>
+            <View style={{ alignItems: 'center', justifyContent: 'space-evenly', width: 500 }}>
+                        <SelectList
+                               dropdownStyles={{position:'relative'}}
+                                setSelected={setBrand}
+                                data={vendor}
+                                
+                                placeholder='Select Type of Gas '
+                                arrowicon={<Icon name="chevron-down" size={22} color={'black'} />} 
+                                search={false} 
+                                boxStyles={{ borderRadius: 8, width:300, height: 45 ,margin:10}} 
+                                inputStyles={{ color: '#111', fontSize: 14 }}
+                            />
+                            
+                            <SelectList
+                                dropdownStyles={{position:'relative',width:250}}
+                                setSelected={setCategory}
+                                data={categories}
+                                
+                                placeholder='Select  Size (KG)'
+                                arrowicon={<Icon name="chevron-down" size={22} color={'black'} />} 
+                                search={false} 
+                                boxStyles={{ borderRadius: 8, width:300, height: 45 ,margin:10}} 
+                                inputStyles={{ color: '#111', fontSize: 14 }}
+                            />
               
-                    
+                            
+                
+                            <SelectList
+                                dropdownStyles={{position:'absolute'}}
+                                setSelected={setSubCategory}
+                                data={subCategories[category]}
+                               
+                                placeholder='Gas Vendor'
+                                arrowicon={<Icon name="chevron-down" size={22} color={'black'} />} 
+                                search={false} 
+                                boxStyles={{ borderRadius: 8, width: 300, height: 45 }} 
+                                inputStyles={{ color: '#111', fontSize: 14 }}
+                            />         
                 
             </View>
-            {/*<View style={styles.favourite}>
-                <Icon
-                    name="heart-plus-outline"
-                    size={28}
-                    style={styles.heart}
-                />
-            </View>*/}
+            <TouchableOpacity style={styles.btn}
+                onPress={orderHandler}
+            >
+                <Text style={{fontSize:28,color:"#FFF",fontWeight:'Inter-Bold'}}>Next</Text>
+            </TouchableOpacity>
+            
         </View>
     )
 }
@@ -81,31 +98,31 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         borderRadius: 35,
         flexDirection: 'column',
-        height: 420,
+        height: 520,
         alignItems: 'center',
     },
     topcont: {
-        flexDirection: 'row',
+        width: '70%',
+        flexDirection: 'column',
         justifyContent: 'space-around',
     },
     quantity: {
         fontSize: 13,
 
     },
-    heart: {
-        color: COLORS.primary
-    },
     image: {
-        height: '50%',
+        height: '40%',
         width: '40%'
     },
-    favourite:{
-        marginTop: 10,
-        
-    },
-    productdtl: {
-        fontSize: 18,
-        margin: 2,
-        fontFamily:"Inter-Bold"
+    btn: {
+        marginTop: 60,
+        fontSize: 22,
+        color: '#FFF',
+        height: 45,
+        //borderWidth: 1,
+        borderRadius: 13,
+        backgroundColor:COLORS.primary,
+        width: '40%',
+        alignItems:'center',
     }
 })

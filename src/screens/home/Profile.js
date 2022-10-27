@@ -1,10 +1,19 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header'
 import { COLORS ,IMAGES} from '../../constants/Index';
 import ProfileBtn from './components/ProfileBtn';
-export default function Profile({navigation}) {
+import auth from '@react-native-firebase/auth'
+export default function Profile({ navigation }) {
+    const { user } = useSelector(state => state.user);
+    const dispatch = useDispatch();
+    const SignOutUser = () => {
+        auth().signOut()
+        .then(() => dispatch({ type: 'LOGOUT' }))
+        .catch(error=> console.log(error))
+    }
     return ( 
         <View style={ { backgroundColor: '#E5E5E5',flex:1}}>
             <Header
@@ -18,7 +27,7 @@ export default function Profile({navigation}) {
                     resizeMode="contain"
                     style={styles.image}
                 />
-                <Text style={{fontSize: 18,fontFamily:'Inter-Bold'}}>Jane Doe</Text>
+                <Text style={{ fontSize: 18, fontFamily: 'Inter-Bold' }}>{user.email}</Text>
                 <View style={styles.bottomcard }>
                     <Icon
                         name='map-marker'  
@@ -48,6 +57,7 @@ export default function Profile({navigation}) {
                 <ProfileBtn
                     heading="Sign Out"
                     iconName="logout"
+                    onPress={SignOutUser}
                 />
             </View>
         </View>

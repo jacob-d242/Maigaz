@@ -1,3 +1,4 @@
+import { useRoute } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform, Dimensions, ScrollView } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -7,6 +8,8 @@ export default function DeliverAdress() {
     const [formData, setFormData] = useState({ location: "", street: '', phone: '' });
     const [loading, setLoading] = useState();
     const [error, setError] = useState();
+    const route = useRoute();
+   // const { gasData } = route.params;
     const handleSubmit=()=>{
         if (!formData.location) return setError("Invalid Delivery Adress")
         if (!formData.street) return setError("Invalid Delivery Street")
@@ -33,6 +36,7 @@ export default function DeliverAdress() {
                     onChangeText={text => setFormData({ ...formData, phone: text })}
                     keyboardType={"number-pad"}
                 />
+                <Text>{console.log(route.params.formData)}</Text>
                 <Text style={styles.err}>{error}</Text>
                 <TouchableOpacity style={styles.btn}
                     onPress={handleSubmit}

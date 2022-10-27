@@ -6,13 +6,10 @@ import Header from '../../components/Header'
 import Button from '../../components/Button'
 import { COLORS } from '../../constants/Index';
 import CartProduct from './components/CartProduct';
-export default function Cart({navigation}) {
+export default function Cart({ navigation }) {
+    
     return ( 
         <SafeAreaView style={{alignItems:'center'}}>
-            <Header
-                Title="Basket"
-                onPress={() => navigation.goBack()}
-            />
             <View>
                 
             </View>
@@ -24,11 +21,7 @@ export default function Cart({navigation}) {
             <View style={{margin:20}}>
                 <CartProduct/>
             </View>
-            <TouchableOpacity style={styles.btn}
-                onPress={()=>navigation.navigate('OrderAdress')}
-            >
-                <Text style={{fontSize:28,color:"#FFF",fontWeight:'Inter-Bold'}}>Next</Text>
-            </TouchableOpacity>
+           
         </SafeAreaView>
     )
 }
@@ -45,15 +38,5 @@ const styles = StyleSheet.create({
         backgroundColor:'#D3F2FF'
         
     },
-    btn: {
-        //marginTop: 10,
-        fontSize: 22,
-        color: '#FFF',
-        height: 45,
-        //borderWidth: 1,
-        borderRadius: 13,
-        backgroundColor:COLORS.primary,
-        width: '70%',
-        alignItems:'center',
-    }
+    
 })
