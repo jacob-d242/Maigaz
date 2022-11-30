@@ -26,7 +26,7 @@ export default function HomeScreen({navigation}) {
            
                 <TouchableOpacity 
                 onPress={() =>
-                    navigation.navigate('Shop')
+                    navigation.navigate('Shopping')
                 }
                  style={styles.btn}>
                     <Text style={styles.btntitle}>Shop Now</Text>

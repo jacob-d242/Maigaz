@@ -16,7 +16,7 @@ export default function DashNavigation() {
             <Stack.Screen name="Maps" component={MapView} />
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="OrderAdress" component={DeliverAdress} />
-            <Stack.Screen name="Shop" component={TopBar} />
+            <Stack.Screen name="Shopping" component={TopBar} />
         </Stack.Navigator>
     )
 }
