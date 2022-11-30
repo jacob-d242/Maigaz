@@ -5,6 +5,7 @@ import ProductAdd from "../screens/Seller/ProductAdd";
 import MapView from "../screens/home/components/MapView";
 import Cart from "../screens/home/Cart";
 import DeliverAdress from '../screens/home/components/DeliverAdress'
+import Shop from "../screens/home/Shop";
 const Stack = createNativeStackNavigator();
 
 export default function DashNavigation () {
@@ -15,6 +16,7 @@ export default function DashNavigation () {
             <Stack.Screen name="Maps" component={MapView} />
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="OrderAdress" component={DeliverAdress} />
+            <Stack.Screen name="Shop" component={Shop} />
         </Stack.Navigator>
     )
 }

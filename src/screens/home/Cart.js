@@ -6,6 +6,8 @@ import Header from '../../components/Header'
 import Button from '../../components/Button'
 import { COLORS } from '../../constants/Index';
 import CartProduct from './components/CartProduct';
+
+//import gasData from '../'
 export default function Cart({ navigation }) {
     
     return ( 

@@ -25,7 +25,9 @@ export default function HomeScreen({navigation}) {
             />
            
                 <TouchableOpacity 
-                 onPress={() => navigation.navigate('Cart')}
+                onPress={() =>
+                    navigation.navigate('Shop')
+                }
                  style={styles.btn}>
                     <Text style={styles.btntitle}>Shop Now</Text>
                 </TouchableOpacity>
@@ -40,9 +42,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     animation: {
-        marginTop:30,
         width: 400,
-        height: 400,
+        height: 350,
         color: COLORS.lightSecondary,
         
     },
