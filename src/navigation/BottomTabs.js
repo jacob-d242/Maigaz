@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabs() {
     let size = 35;
     return ( 
-        //<NavigationContainer>
+       
            <Tab.Navigator 
                 screenOptions={({ route }) => ({
                     headerShown: false,
@@ -65,6 +65,6 @@ export default function BottomTabs() {
             {/*<Tab.Screen name="Cart" component={Cart} />*/}
             <Tab.Screen name="Profile" component={Profile} />
             </Tab.Navigator>
-        //</NavigationContainer>
+       
     )
 }

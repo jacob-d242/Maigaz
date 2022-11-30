@@ -1,6 +1,8 @@
 import React from 'react'
 import { SafeAreaView, View, StyleSheet,Text} from 'react-native'
-import Product from './components/Product'
+import { COLORS } from '../../constants/Index'
+import ProductCard from './components/ProductCard'
+
 import SearchBar from './components/SearchBar'
 import SwipeScroll from './components/SwipeScroll'
 
@@ -8,17 +10,20 @@ export default function Shop() {
     return (
         <SafeAreaView>
             <SearchBar />
-            <View>
-                <Text>Order Online </Text>
-                <Text>We Collect &  Deliver </Text>
-            </View>
-            <SwipeScroll/>
-            <Product />
+            <View style={{alignItems:'center'}}>
+                <Text style={styles.text}>Order Online </Text>
+                <Text style={styles.text}>We Collect &  Deliver </Text>
+            </View>       
+            
         </SafeAreaView>
     )
 }
 
 
-const style = StyleSheet.create({
-
+const styles = StyleSheet.create({
+    text: {
+        fontFamily: "Inter-Bold",
+        fontSize: 18,
+        color:COLORS.primary
+    }
 })

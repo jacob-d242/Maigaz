@@ -1,9 +1,12 @@
-import React from 'react'
-import { View ,Text} from 'react-native'
-export default function () {
-    return ( 
-        <View>
-                <Text>scroll</Text>
-        </View>
-    )
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import ProductCard from './ProductCard';
+
+
+
+export default function SwipeScroll() {
+  return (
+   <View>
+    
+    </View>
+  );
 }
