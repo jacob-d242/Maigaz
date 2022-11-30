@@ -4,7 +4,7 @@ import { COLORS } from '../../constants/Index'
 import ProductCard from './components/ProductCard'
 
 import SearchBar from './components/SearchBar'
-import SwipeScroll from './components/SwipeScroll'
+import SwipeScroll from './components/Water'
 
 export default function Shop() {
     return (

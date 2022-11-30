@@ -2,7 +2,8 @@ import React from 'react'
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
+import Shop from '../screens/home/Shop'
+import { COLORS } from '../constants/Index';
 function FeedScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -31,27 +32,27 @@ export default function TopBar() {
     const Tab = createMaterialTopTabNavigator();
   return (
     <Tab.Navigator
-    initialRouteName="Feed"
+    initialRouteName="Shop"
     screenOptions={{
-      tabBarActiveTintColor: '#e91e63',
-      tabBarLabelStyle: { fontSize: 12 },
-      tabBarStyle: { backgroundColor: 'powderblue' },
+      tabBarActiveTintColor: COLORS.primary,
+      tabBarLabelStyle: { fontSize: 16 ,fontFamily:'Inter-Bold' },
+      tabBarStyle: { backgroundColor: COLORS.secondary },
     }}
   >
     <Tab.Screen
-      name="Feed"
-      component={FeedScreen}
-      options={{ tabBarLabel: 'Home' }}
+      name="Shop"
+      component={Shop}
+      options={{ tabBarLabel: 'Hot Deals' }}
     />
     <Tab.Screen
       name="Notifications"
       component={NotificationsScreen}
-      options={{ tabBarLabel: 'Updates' }}
+      options={{ tabBarLabel: 'Gas' }}
     />
     <Tab.Screen
       name="Profile"
       component={ProfileScreen}
-      options={{ tabBarLabel: 'Profile' }}
+      options={{ tabBarLabel: 'Water' }}
     />
   </Tab.Navigator>
   )
