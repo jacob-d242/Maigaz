@@ -1,15 +1,13 @@
 import React from 'react'
 import { SafeAreaView, View, StyleSheet,Text} from 'react-native'
 import { COLORS } from '../../constants/Index'
-import CartProduct from './components/CartProduct'
 import ProductCard from './components/ProductCard'
-
 import SearchBar from './components/SearchBar'
-import SwipeScroll from './components/Water'
 
 export default function Shop() {
     return (
-        <SafeAreaView>
+        <SafeAreaView
+                    >
             <SearchBar />
             <View style={{alignItems:'center'}}>
                 <Text style={styles.text}>Order Online </Text>
@@ -17,6 +15,7 @@ export default function Shop() {
             </View>       
             <View>
                <ProductCard/>
+               
             </View>
         </SafeAreaView>
     )

@@ -43,51 +43,14 @@ export default function ProductCard() {
                 source={IMAGES.gas}
                 style={styles.image}
             />
-            <View style={{ alignItems: 'center', justifyContent: 'space-evenly', width: 500 }}>
-                        <SelectList
-                               dropdownStyles={{position:'relative'}}
-                                setSelected={setBrand}
-                                data={vendor}
-                                
-                                placeholder='Select Type of Gas '
-                                arrowicon={<Icon name="chevron-down" size={22} color={'black'} />} 
-                                search={false} 
-                                boxStyles={{ borderRadius: 8, width:300, height: 45 ,margin:10}} 
-                                inputStyles={{ color: '#111', fontSize: 14 }}
-                            />
-                            
-                            <SelectList
-                                dropdownStyles={{position:'relative',width:250}}
-                                setSelected={setCategory}
-                                data={categories}
-                                
-                                placeholder='Select  Size (KG)'
-                                arrowicon={<Icon name="chevron-down" size={22} color={'black'} />} 
-                                search={false} 
-                                boxStyles={{ borderRadius: 8, width:300, height: 45 ,margin:10}} 
-                                inputStyles={{ color: '#111', fontSize: 14 }}
-                            />
-              
-                            
-                
-                            <SelectList
-                                dropdownStyles={{position:'absolute'}}
-                                setSelected={setSubCategory}
-                                data={subCategories[category]}
-                               
-                                placeholder='Gas Vendor'
-                                arrowicon={<Icon name="chevron-down" size={22} color={'black'} />} 
-                                search={false} 
-                                boxStyles={{ borderRadius: 8, width: 300, height: 45 }} 
-                                inputStyles={{ color: '#111', fontSize: 14 }}
-                            />         
-                
-            </View>
-            <TouchableOpacity style={styles.btn}
+            <View>
+                <Text>13 Kg Gas Clylinder</Text>
+           </View>
+            {/*<TouchableOpacity style={styles.btn}
                 onPress={orderHandler}
             >
                 <Text style={{fontSize:28,color:"#FFF",fontWeight:'Inter-Bold'}}>Next</Text>
-            </TouchableOpacity>
+            </TouchableOpacity>*/}
             
         </View>
     )
@@ -99,7 +62,9 @@ const styles = StyleSheet.create({
         borderRadius: 35,
         flexDirection: 'column',
         height: 350,
+        width:'80%',
         alignItems: 'center',
+        marginHorizontal:'10%'
     },
     topcont: {
         width: '70%',
@@ -111,8 +76,8 @@ const styles = StyleSheet.create({
 
     },
     image: {
-        height: '30%',
-        width: '40%'
+        height: '40%',
+        width: '100%'
     },
     btn: {
         marginTop: 60,
