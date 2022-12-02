@@ -9,8 +9,9 @@ return (
                 source={IMAGES.gas}
                 style={styles.image}
             />
-            <View>
-                <Text>13 Kg Gas Clylinder</Text>
+            <View style={{alignItems: 'center',marginTop:-20}}>
+            <Text>13 Kg Gas Clylinder</Text>
+            <Text>Kshs 1200</Text>
            </View>            
         </View>
     )
@@ -19,12 +20,12 @@ return (
 const styles = StyleSheet.create({
     cartProduct: {
         backgroundColor: '#FFF',
-        borderRadius: 35,
+        borderRadius: 15,
         flexDirection: 'column',
-        height: 250,
+        height: 200,
         width:150,
         alignItems: 'center',
-        marginHorizontal:'10%'
+        marginTop:'10%'
     },
     topcont: {
         width: '70%',
@@ -36,17 +37,8 @@ const styles = StyleSheet.create({
 
     },
     image: {
-        height: '40%',
-        width: '100%'
-    },
-    btn: {
-        marginTop: 60,
-        fontSize: 22,
-        color: '#FFF',
-        height: 45,
-        borderRadius: 13,
-        backgroundColor:COLORS.primary,
-        width: '40%',
-        alignItems:'center',
+        height:150,
+        width: '100%',
+        bottom:50
     }
 })

@@ -1,23 +1,23 @@
 import React from 'react'
-import { SafeAreaView, View, StyleSheet,Text} from 'react-native'
+import { SafeAreaView, View, StyleSheet,Text, ScrollView} from 'react-native'
 import { COLORS } from '../../constants/Index'
 import ProductCard from './components/ProductCard'
 import SearchBar from './components/SearchBar'
 
 export default function Shop() {
     return (
-        <SafeAreaView
+        <ScrollView
                     >
             <SearchBar />
             <View style={{alignItems:'center'}}>
                 <Text style={styles.text}>Order Online </Text>
                 <Text style={styles.text}>We Collect &  Deliver </Text>
             </View>       
-            <View>
-               <ProductCard/>
+            <View style={{flexDirection:'row'}}>
+                <ProductCard />
                
             </View>
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
