@@ -20,8 +20,6 @@ export default function Shop() {
         </TouchableOpacity>
     )
 }
-
-
 const styles = StyleSheet.create({
     text: {
         fontFamily: "Inter-Bold",
