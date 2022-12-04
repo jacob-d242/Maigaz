@@ -1,12 +1,12 @@
 import React from 'react'
-import { SafeAreaView, View, StyleSheet,Text, ScrollView} from 'react-native'
+import { SafeAreaView, View, StyleSheet,Text, ScrollView, TouchableOpacity} from 'react-native'
 import { COLORS } from '../../constants/Index'
 import ProductCard from './components/ProductCard'
 import SearchBar from './components/SearchBar'
 
 export default function Shop() {
     return (
-        <ScrollView
+        <TouchableOpacity
                     >
             <SearchBar />
             <View style={{alignItems:'center'}}>
@@ -17,7 +17,7 @@ export default function Shop() {
                 <ProductCard />
                
             </View>
-        </ScrollView>
+        </TouchableOpacity>
     )
 }
 
