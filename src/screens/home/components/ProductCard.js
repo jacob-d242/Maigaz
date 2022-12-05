@@ -1,9 +1,18 @@
 import React, { useState,useEffect } from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { COLORS, IMAGES } from '../../../constants/Index'
+import gasData from '../../../assets/data/data'
 export default function ProductCard(){ 
-return (
-        <View style={styles.cartProduct}>
+    return (
+        <ScrollView
+            
+        >
+            <View style={styles.cartProduct}>
+            {
+                gasData.map((product) => (
+                    <Text key={product.id}/>
+                ))
+            }
             <Image
                 resizeMode="contain"
                 source={IMAGES.gas}
@@ -13,7 +22,8 @@ return (
             <Text>13 Kg Gas Clylinder</Text>
             <Text>Kshs 1200</Text>
            </View>            
-        </View>
+            </View>
+    </ScrollView>
     )
 }
 
@@ -26,6 +36,7 @@ const styles = StyleSheet.create({
         width:150,
         alignItems: 'center',
         marginTop:'10%'
+        
     },
     topcont: {
         width: '70%',

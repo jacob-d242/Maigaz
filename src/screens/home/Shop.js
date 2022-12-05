@@ -13,9 +13,10 @@ export default function Shop() {
                 <Text style={styles.text}>Order Online </Text>
                 <Text style={styles.text}>We Collect &  Deliver </Text>
             </View>       
-            <View style={{flexDirection:'row'}}>
+            <View >
                 <ProductCard />
-               
+                <ProductCard />
+                <ProductCard />
             </View>
         </TouchableOpacity>
     )
